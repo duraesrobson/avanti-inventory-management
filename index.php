@@ -24,14 +24,14 @@
                 <input type="password" name="password" placeholder="Digite sua senha" id="input-password" required>
             </div>
             <div class="login-btn">
-                <button type="submit" class="btn_login">Entrar</button>
+                <button type="submit" class="btn-login">Entrar</button>
             </div>
             <div class="error-box">
                 <p class="error">
                     Credenciais inválidas. Verifique o usuário e senha.
                 </p>
             </div>
-            <p>
+            <p class="forgot-text">
                 Esqueceu sua senha? Contate o administrador.
             </p>
 
