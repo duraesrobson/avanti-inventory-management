@@ -16,9 +16,9 @@ $options = [
 
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
-    echo "Conexão realizada com sucesso!";
 } catch (PDOException $e) {
-    echo "Erro na conexão: " . $e->getMessage();
+    error_log($e->getMessage());
+    die("Erro na conexao com o banco.");
 }
 
 ?>
