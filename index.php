@@ -6,13 +6,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- link do ícone -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>Login</title>
 </head>
 <body>
     <div class="login-box">
         <form action="" method="post">
             <div class="top-form">
-                <h2>Avanti Inventory Management</h2>
+                <div class="top-form-header">
+                    <span class="material-symbols-outlined">
+                    deployed_code
+                    </span>
+                    <h2>Avanti Inventory Management</h2>
+                </div>
                 <p>Acesse sua conta para gerenciar o estoque</p>
             </div>
             <div class="input-box">
@@ -24,7 +32,9 @@
                 <input type="password" name="password" placeholder="Digite sua senha" id="input-password" required>
             </div>
             <div class="login-btn">
-                <button type="submit" class="btn-login">Entrar</button>
+                <button type="submit" class="btn-login"> <span class="material-symbols-outlined-login">
+login
+</span>Entrar</button>
             </div>
             <div class="error-box">
                 <p class="error">
