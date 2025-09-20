@@ -25,7 +25,7 @@
             </div>
             <div class="input-box">
                 <label for="usuario">Usuário</label>
-                <input type="text" name="usuario" placeholder="Digite seu usuário" id="input-usuario" required>
+                <input type="email" name="usuario" placeholder="Digite seu usuário (e-mail)" id="input-usuario" required>
             </div>
             <div class="input-box">
                 <label for="senha">Senha</label>
