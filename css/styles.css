@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --acqua: #0ea5a4;
+    --laranja: #f59e0b;
+    --cinza-claro: #f0f0f0;
+    --cinza-escuro: #a2a2a2;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,11 +18,12 @@ html, body {
 }
 
 body {
+    font-family: "Noto Sans", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #f0f0f0;
+    background: var(--cinza-claro);
 }
 
 .login-box {
@@ -31,20 +41,27 @@ body {
     margin-bottom: 30px;
 }
 
+.top-form p {
+    color: var(--cinza-escuro);
+    font-size: 17px;
+}
+
 .input-box {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .input-box label {
-    margin-bottom: 4px;
+    margin-bottom: 7px;
+    color: var(--cinza-escuro);
+    font-size: 17px;
 }
 
 .input-box input {
-    border: solid #f0f0f0 2px;
-    border-radius: 12px;
-    height: 45px;
+    border: solid var(--cinza-claro) 2px;
+    border-radius: 18px;
+    height: 55px;
 }
 
 .input-box :placeholder-shown{
@@ -54,13 +71,15 @@ body {
 .btn-login {
     display: flex;
     border: none;
-    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 18px;
     justify-content: center;
     align-items: center;
-    background-color: #0ea5a4;
+    background-color: var(--acqua);
     color: white;
     margin: 15px 0;
-    height: 45px;
+    height: 50px;
     width: 100%;
     padding: 10px;
 }
@@ -68,13 +87,14 @@ body {
 .error-box {
     display: flex;
     border: none;
-    border-radius: 10px;
+    font-size: 16px;
+    border-radius: 18px;
     justify-content: center;
     align-items: center;
-    background-color: #f59e0b;
+    background-color: var(--laranja);
     color: white;
-    margin: 15px 0;
-    height: 30px;
+    margin: 25px 0;
+    height: 45px;
     width: 100%;
     padding: 10px;
 }
@@ -85,6 +105,7 @@ body {
 
 .forgot-text {
     text-align: center;
-    color: #a2a2a2;
+    font-size: 16px;
+    color: var(--cinza-escuro);
 }
 
