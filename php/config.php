@@ -18,7 +18,6 @@ try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
     error_log($e->getMessage());
-    die("Erro na conexao com o banco.");
 }
 
 ?>
