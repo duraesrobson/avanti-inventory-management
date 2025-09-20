@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
 
 -- insere um usuario de exemplo para o teste, a senha teria codificacao hash no php
 INSERT INTO usuarios (usuario, senha)
-VALUES ('admin', "$2y$12$hRK0r4gNkxWmHRc.7jPRdOnd/NxY5V1cbdCxnuzBW1eFXclGlV7P6%");
+VALUES ('teste@empresa.com', "$2y$12$hRK0r4gNkxWmHRc.7jPRdOnd/NxY5V1cbdCxnuzBW1eFXclGlV7P6%");
 
 
 CREATE TABLE IF NOT EXISTS produtos (
