@@ -16,12 +16,12 @@
                 <p>Acesse sua conta para gerenciar o estoque</p>
             </div>
             <div class="input-box">
-                <input type="text" name="username" id="input-username" required>
                 <label for="username">Usuário</label>
+                <input type="text" name="username" placeholder="Digite seu usuário" id="input-username" required>
             </div>
             <div class="input-box">
-                <input type="password" name="password" id="input-password" required>
                 <label for="password">Senha</label>
+                <input type="password" name="password" placeholder="Digite sua senha" id="input-password" required>
             </div>
             <div class="login-btn">
                 <button type="submit" class="btn_login">Entrar</button>
