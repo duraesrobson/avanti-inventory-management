@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="login-box">
-        <form action="" method="post">
+        <form action="/php/auth.php" method="post">
             <div class="top-form">
                 <div class="top-form-header">
                     <span class="material-symbols-outlined">
@@ -29,7 +29,7 @@
             </div>
             <div class="input-box">
                 <label for="senha">Senha</label>
-                <input type="senha" name="senha" placeholder="Digite sua senha" id="input-senha" required>
+                <input type="password" name="senha" placeholder="Digite sua senha" id="input-senha" required>
             </div>
             <div class="login-btn">
                 <button type="submit" class="btn-login"> <span class="material-symbols-outlined-login">
