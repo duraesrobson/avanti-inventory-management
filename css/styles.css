@@ -27,6 +27,7 @@ body {
 
 .main-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -247,3 +248,4 @@ header {
     color: white;
     padding: 8px 16px;
 }
+
