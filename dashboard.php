@@ -63,10 +63,10 @@
         <table class="main-table">
             <thead>
                 <tr>
-                    <td>Nome</td>
-                    <td>Quantidade</td>
-                    <td>Preço</td>
-                    <td>Ações</td>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
