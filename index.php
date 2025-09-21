@@ -12,41 +12,43 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="login-box">
-        <form action="/php/auth.php" method="post">
-            <div class="top-form">
-                <div class="top-form-header">
-                    <span class="material-symbols-outlined">
-                    deployed_code
-                    </span>
-                    <h2>Avanti Inventory Management</h2>
+    <main class="main-content">
+        <div class="login-box">
+            <form action="/php/auth.php" method="post">
+                <div class="top-form">
+                    <div class="top-form-header">
+                        <span class="material-symbols-outlined">
+                        deployed_code
+                        </span>
+                        <h2>Avanti Inventory Management</h2>
+                    </div>
+                    <p>Acesse sua conta para gerenciar o estoque</p>
                 </div>
-                <p>Acesse sua conta para gerenciar o estoque</p>
-            </div>
-            <div class="input-box">
-                <label for="usuario">Usuário</label>
-                <input type="email" name="usuario" placeholder="Digite seu usuário (e-mail)" id="input-usuario" required>
-            </div>
-            <div class="input-box">
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" placeholder="Digite sua senha" id="input-senha" required>
-            </div>
-            <div class="login-btn">
-                <button type="submit" class="btn-login"> <span class="material-symbols-outlined-login">
-login
-</span>Entrar</button>
-            </div>
-            <div class="error-box" id="error-box">
-                <p class="error">
-                    Credenciais inválidas. Verifique o usuário e senha.
+                <div class="input-box">
+                    <label for="usuario">Usuário</label>
+                    <input type="email" name="usuario" placeholder="Digite seu usuário (e-mail)" id="input-usuario" required>
+                </div>
+                <div class="input-box">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" placeholder="Digite sua senha" id="input-senha" required>
+                </div>
+                <div class="login-btn">
+                    <button type="submit" class="btn-login"> <span class="material-symbols-outlined-login">
+    login
+    </span>Entrar</button>
+                </div>
+                <div class="error-box" id="error-box">
+                    <p class="error">
+                        Credenciais inválidas. Verifique o usuário e senha.
+                    </p>
+                </div>
+                <p class="forgot-text">
+                    Esqueceu sua senha? Contate o administrador.
                 </p>
-            </div>
-            <p class="forgot-text">
-                Esqueceu sua senha? Contate o administrador.
-            </p>
-
-        </form>
-    </div>
+    
+            </form>
+        </div>
+    </main>
 
     <script src="js/script.js"></script>
 </body>
