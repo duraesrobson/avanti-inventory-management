@@ -3,8 +3,9 @@
 :root {
     --acqua: #0ea5a4;
     --laranja: #f59e0b;
-    --cinza-claro: #f0f0f0;
+    --cinza-claro: #f7f8f9;
     --cinza-escuro: #a2a2a2;
+    --light: #f1f5f9;
 }
 
 * {
@@ -145,3 +146,50 @@ body {
     color: var(--cinza-escuro);
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 4%;
+    position: sticky;
+    top: 0;
+    background-color: var(--light);
+}
+
+.header-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-right-conectado{
+    color: var(--cinza-escuro);
+}
+.header-right-conectado, .header-right-logout  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+}
+
+.material-symbols-outlined-logout, .material-symbols-outlined-dashboard {
+  font-family: 'Material Symbols Outlined';
+
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 24;
+
+  font-size: 18px;
+  justify-content: center;
+  border-radius: 10px;    
+}
