@@ -154,10 +154,11 @@ body {
 
 header {
     display: flex;
+    border-bottom: solid 1px var(--cinza-escuro);
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 15px 4%;
+    padding: 10px 3%;
     position: sticky;
     top: 0;
     background-color: var(--light);
@@ -204,9 +205,18 @@ header {
     border-radius: 10px;
 }
 
+.main-content-dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
 .main-topo {
     display: flex;
+    position:relative;
     align-items: center;
+    margin: 25px 0;
     justify-content: space-between;
     width: 90%;
 }
@@ -249,3 +259,8 @@ header {
     padding: 8px 16px;
 }
 
+.main-table {
+    border-collapse: separate;
+    border-spacing: 15px;
+    width: 94%;
+}

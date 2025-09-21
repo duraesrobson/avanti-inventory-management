@@ -37,7 +37,7 @@
             </div>
         </div>
     </header>
-    <main class="main-content">
+    <main class="main-content-dashboard">
         <div class="main-topo">
             <div class="main-topo-text">
                 <h3>
@@ -59,6 +59,36 @@
                     Adicionar Produto</button>
             </div>
         </div>
+
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Quantidade</td>
+                    <td>Preço</td>
+                    <td>Ações</td>
+                </tr>
+            </thead>
+            <tbody>
+<!-- for no array $produtos que foi declarado em php/produtos.php e cria as linhas da tabela dinamicamente -->
+                <?php if (!empty($produtos)): ?>
+                <?php foreach ($produtos as $p): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($p['nome']) ?></td>
+                        <td><?= $p['quantidade'] ?></td>
+                        <td><?= number_format($p['preco'], 2, ',', '.') ?></td>
+                        <td>
+                            <button class="table-edit-icon" onclick="">Editar</button>
+                            <button class="table-edit-icon" onclick="">Excluir</button>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                <?php else: ?>
+                <!-- mostra mensagem caso nao tiver produto -->
+                    <tr><td colspan="4">Nenhum produto encontrado.</td></tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
     </main>
 </body>
 
