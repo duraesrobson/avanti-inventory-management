@@ -260,7 +260,15 @@ header {
 }
 
 .main-table {
-    border-collapse: separate;
+    border-collapse: collapse;
     border-spacing: 15px;
     width: 94%;
+}
+
+.main-table, td {
+    border: solid 1px;
+}
+
+tr, td {
+    padding: 15px;
 }
