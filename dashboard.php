@@ -76,7 +76,7 @@
                         <tr>
                             <td><?= htmlspecialchars($p['nome']) ?></td>
                             <td><?= $p['quantidade'] ?></td>
-                            <td><?= number_format($p['preco'], 2, ',', '.') ?></td>
+                            <td><?= 'R$ ' . number_format($p['preco'],2, ',', '.') ?></td>
                             <td class="table-actions">
                                 <button class="table-edit-btn" onclick=""><span class="material-symbols-outlined edit-icon">
                                         edit
