@@ -35,7 +35,28 @@
             </div>
         </div>
     </header>
-    <main>
+    <main class="main-content">
+        <div class="main-topo">
+            <div class="main-topo-text">
+                <h3>
+                    Produtos
+                </h3>
+            </div>
+
+            <div class="main-topo-search">
+                <span class="material-symbols-outlined search-icon">
+                    search
+                </span>
+                <input type="search" name="search" id="main-topo-search-input" placeholder="Buscar por nome...">
+            </div>
+
+            <div class="main-topo-add">
+                <button class="main-topo-add-btn"><span class="material-symbols-outlined-add">
+                        add
+                    </span>
+                    Adicionar Produto</button>
+            </div>
+        </div>
 
     </main>
 </body>
