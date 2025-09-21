@@ -162,6 +162,7 @@ header {
     position: sticky;
     top: 0;
     background-color: var(--light);
+    z-index: 100;
 }
 
 .header-left {
