@@ -70,22 +70,28 @@
                 </tr>
             </thead>
             <tbody>
-<!-- for no array $produtos que foi declarado em php/produtos.php e cria as linhas da tabela dinamicamente -->
+                <!-- for no array $produtos que foi declarado em php/produtos.php e cria as linhas da tabela dinamicamente -->
                 <?php if (!empty($produtos)): ?>
-                <?php foreach ($produtos as $p): ?>
-                    <tr>
-                        <td><?= htmlspecialchars($p['nome']) ?></td>
-                        <td><?= $p['quantidade'] ?></td>
-                        <td><?= number_format($p['preco'], 2, ',', '.') ?></td>
-                        <td>
-                            <button class="table-edit-icon" onclick="">Editar</button>
-                            <button class="table-edit-icon" onclick="">Excluir</button>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
+                    <?php foreach ($produtos as $p): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($p['nome']) ?></td>
+                            <td><?= $p['quantidade'] ?></td>
+                            <td><?= number_format($p['preco'], 2, ',', '.') ?></td>
+                            <td class="table-actions">
+                                <button class="table-edit-btn" onclick=""><span class="material-symbols-outlined edit-icon">
+                                        edit
+                                    </span>Editar</button>
+                                <button class="table-remove-btn" onclick=""><span class="material-symbols-outlined remove-icon">
+                                        delete
+                                    </span>Excluir</button>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 <?php else: ?>
-                <!-- mostra mensagem caso nao tiver produto -->
-                    <tr><td colspan="4">Nenhum produto encontrado.</td></tr>
+                    <!-- mostra mensagem caso nao tiver produto -->
+                    <tr>
+                        <td colspan="4">Nenhum produto encontrado.</td>
+                    </tr>
                 <?php endif; ?>
             </tbody>
         </table>

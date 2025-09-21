@@ -6,6 +6,7 @@
     --cinza-claro: #f7f8f9;
     --cinza-escuro: #a2a2a2;
     --light: #eaeaea;
+    --red: #ef4444;
 }
 
 * {
@@ -281,6 +282,10 @@ thead th {
     border-bottom: 1px solid var(--cinza-escuro);
 }
 
+thead th:last-child {
+    text-align: right;
+}
+
 tbody td {
     font-size: 16px;
     padding: 15px;
@@ -300,4 +305,55 @@ tbody tr:hover {
     background-color: var(--laranja);
     color: white;
     transition: ease 0.1s;
+}
+
+.table-actions{
+    display: flex;
+    gap: 8px;
+    justify-content: right;
+}
+
+.table-edit-btn {
+    cursor: pointer;
+    display: flex;
+    border: solid 1px var(--cinza-escuro);
+    gap: 4px;
+    font-size: 12px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light);
+    color: black;
+    padding: 8px 10px;
+}
+
+.edit-icon {
+    font-family: 'Material Symbols Outlined';
+    color: black;
+    background-color: transparent;
+    justify-content: center;
+    padding: 0;
+    font-size: 14px !important;
+}
+
+.table-remove-btn {
+    cursor: pointer;
+    display: flex;
+    border: none;
+    gap: 4px;
+    font-size: 12px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--red);
+    color: white;
+    padding: 8px 10px;
+}
+
+.remove-icon {
+    font-family: 'Material Symbols Outlined';
+    color: white;
+    background-color: transparent;
+    padding: 0;
+    font-size: 14px !important;
 }
