@@ -36,7 +36,7 @@
 login
 </span>Entrar</button>
             </div>
-            <div class="error-box">
+            <div class="error-box" id="error-box">
                 <p class="error">
                     Credenciais inválidas. Verifique o usuário e senha.
                 </p>
@@ -47,5 +47,7 @@ login
 
         </form>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

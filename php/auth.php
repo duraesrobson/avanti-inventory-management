@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -11,12 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $stmt->fetch();
         
         if ($user && password_verify($senha, $user['senha'])) {
-            session_start();
             $_SESSION['usuario'] = $user['usuario'];
             header("Location: ../produtos.php"); 
             exit;
         } else {
-            header("Location: ../index.php"); 
+
+    // redireciona para tela de login e salva o usuario digitado no input
+            header("Location: ../index.php?error=1&usuario=" . urlencode($usuario)); 
             exit;
         }
     } catch (PDOException $e) {
