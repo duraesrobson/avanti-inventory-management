@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if ($user && password_verify($senha, $user['senha'])) {
             $_SESSION['usuario'] = $user['usuario'];
-            header("Location: ../produtos.php"); 
+            header("Location: ../dashboard.php"); 
             exit;
         } else {
 
