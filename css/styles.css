@@ -20,11 +20,15 @@ html, body {
 
 body {
     font-family: "Noto Sans", sans-serif;
+    height: 100vh;
+    background: var(--cinza-claro);
+}
+
+.main-content {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: var(--cinza-claro);
 }
 
 .login-box {
