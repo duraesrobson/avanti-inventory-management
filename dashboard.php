@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="header-left">
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined package-icon">
                 deployed_code
             </span>
             <h5>

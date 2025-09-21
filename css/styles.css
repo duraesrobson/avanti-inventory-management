@@ -159,7 +159,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px 3%;
+    padding: 15px 3%;
     position: sticky;
     top: 0;
     background-color: var(--light);
@@ -170,6 +170,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 5px;
+    font-size: 22px;
+}
+
+.package-icon {
+    background-color: transparent;
+    padding: 0;
 }
 
 .header-right {
@@ -211,16 +218,17 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    padding-bottom: 40px;
 }
 
 .main-topo {
     display: flex;
-    position:relative;
+    position: relative;
     align-items: center;
-    margin: 25px 0;
+    margin: 40px 0;
     justify-content: space-between;
-    width: 90%;
+    width: 94%;
+    font-size: 16px;
 }
 
 .main-topo-search {
@@ -307,7 +315,7 @@ tbody tr:hover {
     transition: ease 0.1s;
 }
 
-.table-actions{
+.table-actions {
     display: flex;
     gap: 8px;
     justify-content: right;
