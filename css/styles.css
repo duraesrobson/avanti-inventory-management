@@ -5,7 +5,7 @@
     --laranja: #f59e0b;
     --cinza-claro: #f7f8f9;
     --cinza-escuro: #a2a2a2;
-    --light: #f1f5f9;
+    --light: #eaeaea;
 }
 
 * {
@@ -259,16 +259,33 @@ header {
     padding: 8px 16px;
 }
 
-.main-table {
-    border-collapse: collapse;
-    border-spacing: 15px;
+table {
+    border: 1px solid var(--cinza-escuro);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
     width: 94%;
 }
 
+thead {
+    background-color: var(--light);
+}
+
 .main-table, td {
-    border: solid 1px;
+    border-bottom: 1px solid var(--cinza-escuro);
+    border-color: var(--cinza-escuro);
 }
 
 tr, td {
     padding: 15px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--light);
+}
+
+tr:hover, tr:nth-child(even):hover {
+background-color: var(--laranja);
+color: white;
+border-radius: 15px;
 }
