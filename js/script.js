@@ -33,17 +33,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.querySelectorAll('.table-remove-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const row = btn.closest('tr');
-            const nome = row.querySelector('td:nth-child(1)').textContent;
-            const preco = row.querySelector('td:nth-child(3)').textContent;
+        btn.addEventListener('click', async () => {
+            const id = btn.getAttribute('data-id');
+            const modal = document.getElementById('remove-modal');
+            modal.showModal();
 
-            document.getElementById('remove-modal-main').innerHTML = `
-      <p><b>Nome:</b> ${nome}</p>
-      <p><b>Preço:</b> ${preco}</p>
-    `;
+            // Buscar dados do produto via AJAX
+            try {
+                const response = await fetch(`php/get-produto.php?id=${id}`);
+                const produto = await response.json();
+
+                if (produto.error) {
+                    document.getElementById('remove-modal-main').innerHTML = `<p>${produto.error}</p>`;
+                } else {
+                    document.getElementById('remove-modal-main').innerHTML = `
+                    <p><b>Nome:</b> ${produto.nome}</p>
+                    <p><b>SKU:</b> ${produto.sku}</p>
+                    <p><b>Quantidade:</b> ${produto.quantidade}</p>
+                    <p><b>Preço:</b> R$ ${Number(produto.preco).toFixed(2)}</p>
+                `;
+                }
+            } catch (err) {
+                console.error(err);
+                document.getElementById('remove-modal-main').innerHTML = `<p>Erro ao buscar produto.</p>`;
+            }
         });
     });
+
 
 
 });

@@ -1,0 +1,17 @@
+<?php
+include __DIR__ . '/config.php';
+
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+
+    $stmt = $pdo->prepare("SELECT nome, sku, quantidade, preco FROM produtos WHERE id = ?");
+    $stmt->execute([$id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($result) {
+        echo json_encode($result);
+    } else {
+        echo json_encode(['error' => 'Produto não encontrado!']);
+    }
+}
+?>
