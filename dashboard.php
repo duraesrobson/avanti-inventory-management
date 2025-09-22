@@ -163,8 +163,8 @@
                     </div>
                     <div class="edit-modal-footer">
                         <div class="edit-modal-footer-btns">
-                            <button type="button"
-                                class="edit-modal-footer-btn edit-modal-footer-discard-btn" data-modal="edit-modal">Descartar</button>
+                            <button type="button" class="edit-modal-footer-btn edit-modal-footer-discard-btn"
+                                data-modal="edit-modal">Descartar</button>
                         </div>
                         <div class="edit-modal-footer-btns">
                             <button type="submit" class="edit-modal-footer-btn edit-modal-footer-update-btn">
@@ -175,6 +175,7 @@
                         </div>
                     </div>
                 </form>
+            </div>
         </dialog>
         </div>
 
