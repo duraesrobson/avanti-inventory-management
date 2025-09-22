@@ -82,8 +82,9 @@
                                         class="material-symbols-outlined edit-icon">
                                         edit
                                     </span>Editar</button>
-                                <button class="table-remove-btn open-modal" data-modal="remove-modal"><span
-                                        class="material-symbols-outlined remove-icon">
+                                <!-- ao clickar, o id do produto é salvo -->
+                                <button class="table-remove-btn open-modal" data-modal="remove-modal"
+                                    data-id="<?= $p['id'] ?>"><span class="material-symbols-outlined remove-icon">
                                         delete
                                     </span>Excluir</button>
                             </td>
@@ -117,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="edit-modal-main">
+                    <div class="edit-modal-main modal-main">
                         <div class="input-box input-box-modal full">
                             <label for="nome">Nome do Produto</label>
                             <input type="text" name="nome" placeholder="Ex.: Camiseta Básica" id="input-nome-produto"
@@ -161,17 +162,17 @@
                             </label>
                         </div>
                     </div>
-                    <div class="edit-modal-footer">
-                        <div class="edit-modal-footer-btns">
-                            <button type="button" class="edit-modal-footer-btn edit-modal-footer-discard-btn"
-                                data-modal="edit-modal">Descartar</button>
+                    <div class="modal-footer">
+                        <div class="edit-modal-footer-btns modal-footer-btns">
+                            <button type="button" class="modal-footer-btn modal-footer-discard-btn"
+                                data-modal="edit-modal">Cancelar</button>
                         </div>
                         <div class="edit-modal-footer-btns">
-                            <button type="submit" class="edit-modal-footer-btn edit-modal-footer-update-btn">
+                            <button type="submit" class="modal-footer-btn modal-footer-update-btn">
                                 <span class="material-symbols-outlined check-icon">
-                                    check
+                                    delete
                                 </span>
-                                Atualizar Produto</button>
+                                Excluir Produto</button>
                         </div>
                     </div>
                 </form>
@@ -180,10 +181,38 @@
         </div>
 
         <dialog id="remove-modal">
-            <button class="close-modal" data-modal="remove-modal">
-                X
-            </button>
+            <div class="modal-box">
+                <div class="top-form">
+                    <div class="top-form-header top-form-header-modal">
+                        <div class="top-form-header-modal-left">
+                            <span class="material-symbols-outlined">delete</span>
+                            <h2>Excluir Produto</h2>
+                        </div>
+                        <div class="top-form-header-modal-right">
+                            <button class="close-modal" data-modal="remove-modal">X</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-main" id="remove-modal-main">
+                    <!-- script.js vai preencher os dados pegando o id do produto -->
+                </div>
+
+                <div class="modal-footer">
+                    <div class="modal-footer-btns">
+                        <button type="button" class="modal-footer-btn modal-footer-discard-btn"
+                            data-modal="remove-modal">Cancelar</button>
+                    </div>
+                    <div class="modal-footer-btns">
+                        <button id="remove-confirm-btn" type="button" class="modal-footer-btn modal-footer-remove-btn">
+                            <span class="material-symbols-outlined check-icon">delete</span>
+                            Confirmar Exclusão
+                        </button>
+                    </div>
+                </div>
+            </div>
         </dialog>
+
 
     </main>
     <script src="js/script.js"></script>
