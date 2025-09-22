@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
-    
+
     if (params.has("error")) {
         document.querySelector(".error-box").style.display = "flex";
     };
@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (params.has("usuario")) {
         document.getElementById("input-usuario").value = params.get("usuario");
     };
-    
+
     const openButtons = document.querySelectorAll('.open-modal');
-    
+
     openButtons.forEach(button => {
         button.addEventListener('click', () => {
             const modalId = button.getAttribute('data-modal');
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const closeButtons = document.querySelectorAll('.close-modal, .edit-modal-footer-discard-btn');
+    const closeButtons = document.querySelectorAll('.close-modal, .modal-footer-discard-btn');
 
     closeButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -31,5 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.close();
         });
     });
+
+    document.querySelectorAll('.table-remove-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const row = btn.closest('tr');
+            const nome = row.querySelector('td:nth-child(1)').textContent;
+            const preco = row.querySelector('td:nth-child(3)').textContent;
+
+            document.getElementById('remove-modal-main').innerHTML = `
+      <p><b>Nome:</b> ${nome}</p>
+      <p><b>Preço:</b> ${preco}</p>
+    `;
+        });
+    });
+
 
 });
