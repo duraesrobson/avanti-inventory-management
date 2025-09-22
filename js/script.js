@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const params = new URLSearchParams(window.location.search);
 
     if (params.has("error")) {
@@ -32,15 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // script que busca os dados do produto pelo id no modal de excluir produto
+    let idProdutoRemover = null;
+
     document.querySelectorAll('.table-remove-btn').forEach(btn => {
         btn.addEventListener('click', async () => {
-            const id = btn.getAttribute('data-id');
+            idProdutoRemover = btn.getAttribute('data-id');
             const modal = document.getElementById('remove-modal');
             modal.showModal();
 
-            // Buscar dados do produto via AJAX
+            // dados do produto com AJAX
             try {
-                const response = await fetch(`php/get-produto.php?id=${id}`);
+                const response = await fetch(`php/get-produto.php?id=${idProdutoRemover}`);
                 const produto = await response.json();
 
                 if (produto.error) {
@@ -60,6 +63,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // script para remover o produto ao clickar no botao confirmar
+    document.getElementById('remove-confirm-btn').addEventListener('click', async () => {
+        if (!idProdutoRemover) return;
+
+        try {
+            const response = await fetch('php/remove-produto.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `id=${idProdutoRemover}`
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert('Produto removido!');
+                location.reload();
+            } else {
+                alert(result.error || 'Erro ao remover produto');
+            }
+        } catch (err) {
+            console.error(err);
+            alert('Erro ao remover produto.');
+        }
+    });
 
 
 });
