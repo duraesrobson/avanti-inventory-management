@@ -76,12 +76,14 @@
                         <tr>
                             <td><?= htmlspecialchars($p['nome']) ?></td>
                             <td><?= $p['quantidade'] ?></td>
-                            <td><?= 'R$ ' . number_format($p['preco'],2, ',', '.') ?></td>
+                            <td><?= 'R$ ' . number_format($p['preco'], 2, ',', '.') ?></td>
                             <td class="table-actions">
-                                <button class="table-edit-btn" onclick=""><span class="material-symbols-outlined edit-icon">
+                                <button class="table-edit-btn open-modal" data-modal="edit-modal"><span
+                                        class="material-symbols-outlined edit-icon">
                                         edit
                                     </span>Editar</button>
-                                <button class="table-remove-btn" onclick=""><span class="material-symbols-outlined remove-icon">
+                                <button class="table-remove-btn open-modal" data-modal="remove-modal"><span
+                                        class="material-symbols-outlined remove-icon">
                                         delete
                                     </span>Excluir</button>
                             </td>
@@ -95,7 +97,20 @@
                 <?php endif; ?>
             </tbody>
         </table>
+        <dialog id="edit-modal">
+            <button class="close-modal" data-modal="edit-modal">
+                X
+            </button>
+            <h1>Editar</h1>
+        </dialog>
+        <dialog id="remove-modal">
+            <button class="close-modal" data-modal="remove-modal">
+                X
+            </button>
+            <h1>Remover</h1>
+        </dialog>
     </main>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
