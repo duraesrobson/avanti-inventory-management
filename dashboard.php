@@ -65,7 +65,20 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Quantidade</th>
+                    <th><?php
+include __DIR__ . '/config.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'])) {
+    $id = intval($_POST['id']);
+    $stmt = $pdo->prepare("UPDATE FROM produtos  set WHERE id = ?");
+    
+    if ($stmt->execute([$id])) {
+        echo json_encode(['success' => true]);
+    } else {
+        echo json_encode(['success' => false, 'error' => 'Erro ao remover produto']);
+    }
+}
+?>Quantidade</th>
                     <th>Preço</th>
                     <th>Ações</th>
                 </tr>
@@ -132,17 +145,15 @@
                         <div class="input-box input-box-modal">
                             <label for="categoria">Categoria</label>
                             <input type="text" name="categoria" placeholder="Ex.: Eletrodoméstico"
-                                id="input-categoria-produto" required>
+                                id="input-categoria-produto" >
                         </div>
                         <div class="input-box input-box-modal">
                             <label for="preco">Preço</label>
-                            <input type="text" name="preco" placeholder="Ex.: R$ 19,90" id="input-preco-produto"
-                                required>
+                            <input type="text" name="preco" placeholder="Ex.: R$ 19,90" id="input-preco-produto">
                         </div>
                         <div class="input-box input-box-modal">
                             <label for="quantidade">Quantidade em Estoque</label>
-                            <input type="number" name="quantidade" placeholder="Ex.: 99" id="input-quantidade-produto"
-                                required min="0">
+                            <input type="number" name="quantidade" placeholder="Ex.: 99" id="input-quantidade-produto" min="0">
                         </div>
                         <div class="input-box full input-box-modal">
                             <label for="fornecedor">Fornecedor</label>

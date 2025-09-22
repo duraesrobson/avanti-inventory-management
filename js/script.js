@@ -88,5 +88,67 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
+    document.querySelectorAll('.table-edit-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const id = btn.closest('tr').querySelector('.table-remove-btn').getAttribute('data-id');
+            const modal = document.getElementById('edit-modal');
+            modal.showModal();
+
+            try {
+                const response = await fetch(`php/get-produto.php?id=${id}`);
+                const produto = await response.json();
+
+                if (produto.error) {
+                    alert(produto.error);
+                } else {
+                    // ao abrir o modal de edição, busca os dados atuais do produto via AJAX e preenche os inputs
+                    document.getElementById('input-nome-produto').value = produto.nome || '';
+                    document.getElementById('input-sku-produto').value = produto.sku || '';
+                    document.getElementById('input-categoria-produto').value = produto.categoria || '';
+                    document.getElementById('input-preco-produto').value = produto.preco || '';
+                    document.getElementById('input-quantidade-produto').value = produto.quantidade || '';
+                    document.getElementById('input-fornecedor-produto').value = produto.fornecedor || '';
+                    document.getElementById('input-descricao-produto').value = produto.descricao || '';
+                }
+
+                // salva o id no formulário para usar no fetch
+                document.querySelector('#edit-modal form').setAttribute('data-id', id);
+
+            } catch (err) {
+                console.error(err);
+                alert('Erro ao carregar dados do produto.');
+            }
+        });
+    });
+
+    // faz o submit do formulário de edição
+    document.querySelector('#edit-modal form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const id = e.target.getAttribute('data-id');
+        const formData = new FormData(e.target);
+        formData.append('id', id);
+
+        try {
+            const response = await fetch('php/update-produto.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert('Produto atualizado!');
+                location.reload();
+            } else {
+                alert(result.error || 'Erro ao atualizar produto');
+            }
+
+        } catch (err) {
+            console.error(err);
+            alert('Erro ao atualizar produto.');
+        }
+    });
+
 
 });
