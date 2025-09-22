@@ -170,9 +170,9 @@
                         <div class="edit-modal-footer-btns">
                             <button type="submit" class="modal-footer-btn modal-footer-update-btn">
                                 <span class="material-symbols-outlined check-icon">
-                                    delete
+                                    check
                                 </span>
-                                Excluir Produto</button>
+                                Atualizar Produto</button>
                         </div>
                     </div>
                 </form>
