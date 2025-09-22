@@ -97,18 +97,93 @@
                 <?php endif; ?>
             </tbody>
         </table>
+
+        <!-- dialogs para modais de editar e remover produtos -->
         <dialog id="edit-modal">
-            <button class="close-modal" data-modal="edit-modal">
-                X
-            </button>
-            <h1>Editar</h1>
+            <div class="modal-box">
+                <form action="" method="post">
+                    <div class="top-form">
+                        <div class="top-form-header top-form-header-modal">
+                            <div class="top-form-header-modal-left">
+                                <span class="material-symbols-outlined">
+                                    deployed_code
+                                </span>
+                                <h2>Editar Produto</h2>
+                            </div>
+                            <div class="top-form-header-modal-right">
+                                <button class="close-modal" data-modal="edit-modal">
+                                    X
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edit-modal-main">
+                        <div class="input-box input-box-modal full">
+                            <label for="nome">Nome do Produto</label>
+                            <input type="text" name="nome" placeholder="Ex.: Camiseta Básica" id="input-nome-produto"
+                                required>
+                        </div>
+                        <div class="input-box input-box-modal">
+                            <label for="sku">SKU</label>
+                            <input type="text" name="sku" placeholder="Ex.: AAA-111" id="input-sku-produto">
+                        </div>
+                        <div class="input-box input-box-modal">
+                            <label for="categoria">Categoria</label>
+                            <input type="text" name="categoria" placeholder="Ex.: Eletrodoméstico"
+                                id="input-categoria-produto" required>
+                        </div>
+                        <div class="input-box input-box-modal">
+                            <label for="preco">Preço</label>
+                            <input type="text" name="preco" placeholder="Ex.: R$ 19,90" id="input-preco-produto"
+                                required>
+                        </div>
+                        <div class="input-box input-box-modal">
+                            <label for="quantidade">Quantidade em Estoque</label>
+                            <input type="number" name="quantidade" placeholder="Ex.: 99" id="input-quantidade-produto"
+                                required min="0">
+                        </div>
+                        <div class="input-box full input-box-modal">
+                            <label for="fornecedor">Fornecedor</label>
+                            <input type="text" name="fornecedor" placeholder="..." id="input-fornecedor-produto">
+                        </div>
+                        <div class="input-box full input-box-modal">
+                            <label for="descricao">Descrição</label>
+                            <textarea name="descricao" id="input-descricao-produto" placeholder="..."></textarea>
+                        </div>
+                        <div class="input-box full input-box-modal">
+                            <label for="input-imagem-produto">Imagem do produto</label>
+                            <input type="file" id="input-imagem-produto" name="imagem" accept="image/*" hidden>
+                            <label for="input-imagem-produto" class="custom-file-upload">
+                                <span class="material-symbols-outlined img-icon">
+                                    image
+                                </span>
+                                Selecionar imagem
+                            </label>
+                        </div>
+                    </div>
+                    <div class="edit-modal-footer">
+                        <div class="edit-modal-footer-btns">
+                            <button type="button"
+                                class="edit-modal-footer-btn edit-modal-footer-discard-btn" data-modal="edit-modal">Descartar</button>
+                        </div>
+                        <div class="edit-modal-footer-btns">
+                            <button type="submit" class="edit-modal-footer-btn edit-modal-footer-update-btn">
+                                <span class="material-symbols-outlined check-icon">
+                                    check
+                                </span>
+                                Atualizar Produto</button>
+                        </div>
+                    </div>
+                </form>
         </dialog>
+        </div>
+
         <dialog id="remove-modal">
             <button class="close-modal" data-modal="remove-modal">
                 X
             </button>
-            <h1>Remover</h1>
         </dialog>
+
     </main>
     <script src="js/script.js"></script>
 </body>

@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const closeButtons = document.querySelectorAll('.close-modal');
+    const closeButtons = document.querySelectorAll('.close-modal, .edit-modal-footer-discard-btn');
 
     closeButtons.forEach(button => {
         button.addEventListener('click', () => {
