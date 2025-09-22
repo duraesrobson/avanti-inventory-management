@@ -278,14 +278,14 @@ dialog::backdrop {
     padding: 12px 16px;
 }
 
-.edit-modal-main {
+.modal-main {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding-bottom: 20px;
 }
 
-.edit-modal-main .full {
+.modal-main .full {
     grid-column: 1 / -1;
 }
 
@@ -335,7 +335,7 @@ textarea :placeholder-shown {
     padding-left: 20px;
 }
 
-.edit-modal-footer {
+.modal-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -344,7 +344,7 @@ textarea :placeholder-shown {
     padding-top: 20px;
 }
 
-.edit-modal-footer-btn {
+.modal-footer-btn {
     cursor: pointer;
     display: flex;
     border: solid 1px var(--light);
@@ -357,13 +357,13 @@ textarea :placeholder-shown {
 
 }
 
-.edit-modal-footer-discard-btn {
+.modal-footer-discard-btn {
     background-color: white;
     color: var(--cinza-escuro);
 }
 
 
-.edit-modal-footer-update-btn {
+.modal-footer-update-btn {
     background-color: var(--acqua);
     color: white;
     border: none;
@@ -398,4 +398,10 @@ textarea :placeholder-shown {
     background-color: var(--laranja);
     color: white;
     border-color: var(--laranja);
+}
+
+.modal-footer-remove-btn {
+    background-color: var(--red);
+    color: white;
+    border: none;
 }
