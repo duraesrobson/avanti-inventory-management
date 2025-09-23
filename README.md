@@ -39,7 +39,7 @@ Sistema de gerenciamento de estoque desenvolvido em **PHP**, **MySQL**, com fron
 
 ---
 
-## Instalação 🔧
+## Instalação
 
 1. Clone o repositório:
 ```bash
@@ -67,3 +67,16 @@ php -S localhost:8000
 http://localhost:8000/index.php
 ```
 
+---
+
+## Aprendizado e Desafios
+
+Durante o desenvolvimento deste projeto, meu maior aprendizado foi:
+
+- Implementar tabelas em HTML preenchidas dinamicamente usando PHP e PDO.
+
+- Trabalhar com PDO para interagir com o banco de dados, algo que ainda não havia feito antes (anteriormente usei apenas MySQLi).
+
+- Gerenciar dados de produtos de forma segura, incluindo inserção, edição e remoção com validação e feedback ao usuário.
+
+O projeto me proporcionou prática com modais dinâmicos, fetch/AJAX, e manipulação do DOM em JavaScript, consolidando conhecimentos em frontend e backend integrados.
