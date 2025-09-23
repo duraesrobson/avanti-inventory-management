@@ -20,3 +20,38 @@ Sistema de gerenciamento de estoque desenvolvido em **PHP**, **MySQL**, com fron
 - Ordenação de colunas da tabela dinamicamente.
 
 ---
+
+## Tecnologias 
+
+- **Backend:** PHP 8+, MySQL  
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Banco de Dados:** MySQL  
+- **Ícones:** Material Symbols  
+- **UI:** Modais nativos `<dialog>`
+
+---
+
+## Estrutura do Projeto
+
+├── css
+│ ├── dashboard.css
+│ ├── global.css
+│ ├── index.css
+│ ├── modal.css
+│ └── responsive.css
+├── dashboard.php
+├── database.sql
+├── index.php
+├── js
+│ └── script.js
+├── php
+│ ├── auth.php
+│ ├── config.php
+│ ├── get-produto.php
+│ ├── insert-produto.php
+│ ├── login.php
+│ ├── logout.php
+│ ├── produtos.php
+│ ├── remove-produto.php
+│ └── update-produto.php
+└── README.md
