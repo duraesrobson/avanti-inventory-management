@@ -13,9 +13,7 @@ Sistema de gerenciamento de estoque desenvolvido em **PHP**, **MySQL**, com fron
 
 ## Demonstração
 
-<video width="800" controls>
-  <source src="demo/estoque-avanti-demo.mp4" type="video/mp4">
-</video>
+[![Assista à demonstração](https://img.youtube.com/vi/HN97J3bg6b4/0.jpg)](https://youtu.be/HN97J3bg6b4)
 
 ---
 
