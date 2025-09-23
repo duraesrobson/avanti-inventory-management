@@ -31,10 +31,15 @@
                 <h6>Conectado</h6>
             </div>
             <div class="header-right-logout">
-                <span class="material-symbols-outlined-logout">
-                    logout
-                </span>
-                <h6>Sair</h6>
+                <a href="php/logout.php">
+
+                    <a href="php/logout.php" class="header-sair-btn">
+                        <span class="material-symbols-outlined-logout">
+                            logout
+                        </span>
+                        Sair
+                    </button>
+                </a>
             </div>
         </div>
     </header>
