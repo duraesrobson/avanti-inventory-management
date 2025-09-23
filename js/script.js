@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             const modal = document.getElementById(modalId);
 
             if (modalId === 'insert-modal') {
-            // se o modal for de insert, o formulario abre com os campos vazios
-            modal.querySelector('form').reset();
-        }
+                // se o modal for de insert, o formulario abre com os campos vazios
+                modal.querySelector('form').reset();
+            }
 
             modal.showModal();
         });
@@ -182,5 +182,47 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
+    // script para fazer sort das heads da tabela ao clickar
+    document.querySelectorAll(".main-table th").forEach((th, colIndex) => {
 
+        // não deixa ordenar a coluna "ações"
+        if (th.innerText.trim() === "Ações") return;
+
+        th.addEventListener("click", () => {
+            const table = th.closest("table");
+            const tbody = table.querySelector("tbody");
+            const rows = Array.from(tbody.querySelectorAll("tr"));
+            const asc = th.classList.toggle("asc");
+
+            // limpa "asc" das outras colunas
+            table.querySelectorAll("th").forEach(h => {
+                if (h !== th) h.classList.remove("asc");
+            });
+
+            rows.sort((a, b) => {
+                const A = a.children[colIndex].innerText.trim();
+                const B = b.children[colIndex].innerText.trim();
+
+                // remove o R$ que está indo para tabela e troca pontos e virgulas
+                function normalizar(valor) {
+                    return valor
+                        .replace("R$", "")
+                        .replace(/\./g, "")
+                        .replace(",", ".")
+                        .trim();
+                }
+
+                // tenta converter para número (quantidade e preço)
+                const numA = parseFloat(normalizar(A));
+                const numB = parseFloat(normalizar(B));
+
+                if (!isNaN(numA) && !isNaN(numB)) {
+                    return asc ? numA - numB : numB - numA;
+                }
+                return asc ? A.localeCompare(B) : B.localeCompare(A);
+            });
+
+            rows.forEach(row => tbody.appendChild(row));
+        });
+    });
 });
