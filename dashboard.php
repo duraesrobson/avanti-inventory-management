@@ -1,4 +1,7 @@
-<?php include 'php/produtos.php' ?>
+<?php 
+include 'php/produtos.php';
+include_once __DIR__ . '/auth.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
