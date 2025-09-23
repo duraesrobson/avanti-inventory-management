@@ -4,7 +4,7 @@ include __DIR__ . '/config.php';
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']);
 
-    $stmt = $pdo->prepare("SELECT nome, sku, quantidade, preco FROM produtos WHERE id = ?");
+    $stmt = $pdo->prepare("SELECT nome, sku, categoria, descricao, fornecedor, quantidade, preco FROM produtos WHERE id = ?");
     $stmt->execute([$id]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
