@@ -54,7 +54,8 @@
             </div>
 
             <div class="main-topo-add">
-                <button class="main-topo-add-btn"><span class="material-symbols-outlined-add">
+                <button class="main-topo-add-btn open-modal" data-modal="insert-modal"><span
+                        class="material-symbols-outlined-add">
                         add
                     </span>
                     Adicionar Produto</button>
@@ -100,7 +101,87 @@
             </tbody>
         </table>
 
-        <!-- dialogs para modais de editar e remover produtos -->
+        <!-- dialog com form para adicionar produto -->
+        <dialog id="insert-modal">
+            <div class="modal-box">
+                <form action="" method="post">
+                    <div class="top-form">
+                        <div class="top-form-header top-form-header-modal">
+                            <div class="top-form-header-modal-left">
+                                <span class="material-symbols-outlined">
+                                    box_add
+                                </span>
+                                <h2>Adicionar Produto</h2>
+                            </div>
+                            <div class="top-form-header-modal-right">
+                                <button type="button" class="close-modal" data-modal="insert-modal">
+                                    X
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="insert-modal-main modal-main">
+                        <div class="input-box input-box-modal full">
+                            <label for="nome">Nome do Produto</label>
+                            <input type="text" name="nome" placeholder="Ex.: Camiseta Básica" id="insert-nome-produto"
+                                required>
+                        </div>
+                        <div class="input-box input-box-modal">
+                            <label for="sku">SKU</label>
+                            <input type="text" name="sku" placeholder="Ex.: AAA-111" id="insert-sku-produto">
+                        </div>
+                        <div class="input-box input-box-modal">
+                            <label for="categoria">Categoria</label>
+                            <input type="text" name="categoria" placeholder="Ex.: Eletrodoméstico"
+                                id="insert-categoria-produto" required>
+                        </div>
+                        <div class="input-box input-box-modal">
+                            <label for="preco">Preço</label>
+                            <input type="text" name="preco" placeholder="Ex.: R$ 19,90" id="insert-preco-produto"
+                                required>
+                        </div>
+                        <div class="input-box input-box-modal">
+                            <label for="quantidade">Quantidade em Estoque</label>
+                            <input type="number" name="quantidade" placeholder="Ex.: 99" id="insert-quantidade-produto"
+                                required min="0">
+                        </div>
+                        <div class="input-box full input-box-modal">
+                            <label for="fornecedor">Fornecedor</label>
+                            <input type="text" name="fornecedor" placeholder="..." id="insert-fornecedor-produto">
+                        </div>
+                        <div class="input-box full input-box-modal">
+                            <label for="descricao">Descrição</label>
+                            <textarea name="descricao" id="insert-descricao-produto" placeholder="..."></textarea>
+                        </div>
+                        <div class="input-box full input-box-modal">
+                            <label for="insert-imagem-produto">Imagem do produto</label>
+                            <input type="file" id="insert-imagem-produto" name="imagem" accept="image/*" hidden>
+                            <label for="input-imagem-produto" class="custom-file-upload">
+                                <span class="material-symbols-outlined img-icon">
+                                    image
+                                </span>
+                                Selecionar imagem
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="insert-modal-footer-btns modal-footer-btns">
+                            <button type="button" class="modal-footer-btn modal-footer-discard-btn"
+                                data-modal="insert-modal">Cancelar</button>
+                        </div>
+                        <div class="insert-modal-footer-btns">
+                            <button type="submit" class="modal-footer-btn modal-footer-save-btn">
+                                <span class="material-symbols-outlined save-icon">
+                                    save
+                                </span>
+                                Salvar Produto</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </dialog>
+
+        <!-- dialog com form de edicao de produto -->
         <dialog id="edit-modal">
             <div class="modal-box">
                 <form action="" method="post">
@@ -122,38 +203,38 @@
                     <div class="edit-modal-main modal-main">
                         <div class="input-box input-box-modal full">
                             <label for="nome">Nome do Produto</label>
-                            <input type="text" name="nome" placeholder="Ex.: Camiseta Básica" id="input-nome-produto"
+                            <input type="text" name="nome" placeholder="Ex.: Camiseta Básica" id="edit-nome-produto"
                                 required>
                         </div>
                         <div class="input-box input-box-modal">
                             <label for="sku">SKU</label>
-                            <input type="text" name="sku" placeholder="Ex.: AAA-111" id="input-sku-produto">
+                            <input type="text" name="sku" placeholder="Ex.: AAA-111" id="edit-sku-produto">
                         </div>
                         <div class="input-box input-box-modal">
                             <label for="categoria">Categoria</label>
                             <input type="text" name="categoria" placeholder="Ex.: Eletrodoméstico"
-                                id="input-categoria-produto">
+                                id="edit-categoria-produto">
                         </div>
                         <div class="input-box input-box-modal">
                             <label for="preco">Preço</label>
-                            <input type="text" name="preco" placeholder="Ex.: R$ 19,90" id="input-preco-produto">
+                            <input type="text" name="preco" placeholder="Ex.: R$ 19,90" id="edit-preco-produto">
                         </div>
                         <div class="input-box input-box-modal">
                             <label for="quantidade">Quantidade em Estoque</label>
-                            <input type="number" name="quantidade" placeholder="Ex.: 99" id="input-quantidade-produto"
+                            <input type="number" name="quantidade" placeholder="Ex.: 99" id="edit-quantidade-produto"
                                 min="0">
                         </div>
                         <div class="input-box full input-box-modal">
                             <label for="fornecedor">Fornecedor</label>
-                            <input type="text" name="fornecedor" placeholder="..." id="input-fornecedor-produto">
+                            <input type="text" name="fornecedor" placeholder="..." id="edit-fornecedor-produto">
                         </div>
                         <div class="input-box full input-box-modal">
                             <label for="descricao">Descrição</label>
-                            <textarea name="descricao" id="input-descricao-produto" placeholder="..."></textarea>
+                            <textarea name="descricao" id="edit-descricao-produto" placeholder="..."></textarea>
                         </div>
                         <div class="input-box full input-box-modal">
-                            <label for="input-imagem-produto">Imagem do produto</label>
-                            <input type="file" id="input-imagem-produto" name="imagem" accept="image/*" hidden>
+                            <label for="edit-imagem-produto">Imagem do produto</label>
+                            <input type="file" id="edit-imagem-produto" name="imagem" accept="image/*" hidden>
                             <label for="input-imagem-produto" class="custom-file-upload">
                                 <span class="material-symbols-outlined img-icon">
                                     image
@@ -178,7 +259,6 @@
                 </form>
             </div>
         </dialog>
-        </div>
 
         <dialog id="remove-modal">
             <div class="modal-box">
