@@ -11,6 +11,7 @@ include_once __DIR__ . '/auth.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <!-- link dos icones -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <title>Dashboard</title>
@@ -84,10 +85,10 @@ include_once __DIR__ . '/auth.php';
                 <?php if (!empty($produtos)): ?>
                     <?php foreach ($produtos as $p): ?>
                         <tr>
-                            <td><?= htmlspecialchars($p['nome']) ?></td>
-                            <td><?= $p['quantidade'] ?></td>
-                            <td><?= 'R$ ' . number_format($p['preco'], 2, ',', '.') ?></td>
-                            <td class="table-actions">
+                            <td data-label="Nome"><?= htmlspecialchars($p['nome']) ?></td>
+                            <td data-label="Quantidade"><?= $p['quantidade'] ?></td>
+                            <td data-label="Preço"><?= 'R$ ' . number_format($p['preco'], 2, ',', '.') ?></td>
+                            <td class="table-actions" data-label="Ações">
                                 <button class="table-edit-btn open-modal" data-modal="edit-modal"><span
                                         class="material-symbols-outlined edit-icon">
                                         edit
