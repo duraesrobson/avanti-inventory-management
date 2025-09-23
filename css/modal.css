@@ -78,18 +78,22 @@ dialog::backdrop {
     grid-column: 1 / -1;
 }
 
-#input-quantidade-produto::-webkit-outer-spin-button,
-#input-quantidade-produto::-webkit-inner-spin-button {
+#edit-quantidade-produto::-webkit-outer-spin-button,
+#edit-quantidade-produto::-webkit-inner-spin-button,
+#insert-quantidade-produto::-webkit-outer-spin-button,
+#insert-quantidade-produto::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-#input-quantidade-produto {
+#edit-quantidade-produto,
+#insert-quantidade-produto {
     appearance: textfield;
     -moz-appearance: textfield;
 }
 
-#input-descricao-produto {
+#edit-descricao-produto,
+#insert-descricao-produto {
     width: 100%;
     min-height: 100px;
     border: 2px solid var(--light);
@@ -153,13 +157,15 @@ textarea :placeholder-shown {
 }
 
 
-.modal-footer-update-btn {
+.modal-footer-update-btn,
+.modal-footer-save-btn {
     background-color: var(--acqua);
     color: white;
     border: none;
 }
 
-.check-icon {
+.check-icon,
+.save-icon {
     font-size: 17px !important;
     background-color: transparent;
     padding: 0;
