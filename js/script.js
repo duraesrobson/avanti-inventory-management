@@ -17,6 +17,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             const modalId = button.getAttribute('data-modal');
             const modal = document.getElementById(modalId);
 
+            if (modalId === 'insert-modal') {
+            // se o modal for de insert, o formulario abre com os campos vazios
+            modal.querySelector('form').reset();
+        }
+
             modal.showModal();
         });
     });
@@ -102,13 +107,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                     alert(produto.error);
                 } else {
                     // ao abrir o modal de edição, busca os dados atuais do produto via AJAX e preenche os inputs
-                    document.getElementById('input-nome-produto').value = produto.nome || '';
-                    document.getElementById('input-sku-produto').value = produto.sku || '';
-                    document.getElementById('input-categoria-produto').value = produto.categoria || '';
-                    document.getElementById('input-preco-produto').value = produto.preco || '';
-                    document.getElementById('input-quantidade-produto').value = produto.quantidade || '';
-                    document.getElementById('input-fornecedor-produto').value = produto.fornecedor || '';
-                    document.getElementById('input-descricao-produto').value = produto.descricao || '';
+                    document.getElementById('edit-nome-produto').value = produto.nome || '';
+                    document.getElementById('edit-sku-produto').value = produto.sku || '';
+                    document.getElementById('edit-categoria-produto').value = produto.categoria || '';
+                    document.getElementById('edit-preco-produto').value = produto.preco || '';
+                    document.getElementById('edit-quantidade-produto').value = produto.quantidade || '';
+                    document.getElementById('edit-fornecedor-produto').value = produto.fornecedor || '';
+                    document.getElementById('edit-descricao-produto').value = produto.descricao || '';
                 }
 
                 // salva o id no formulário para usar no fetch
@@ -147,6 +152,33 @@ document.addEventListener("DOMContentLoaded", async () => {
         } catch (err) {
             console.error(err);
             alert('Erro ao atualizar produto.');
+        }
+    });
+
+    // faz o submit do formulário de inserção
+    document.querySelector('#insert-modal form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+
+        try {
+            const response = await fetch('php/insert-produto.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert('Produto adicionado!');
+                location.reload();
+            } else {
+                alert(result.error || 'Erro ao adicionar produto');
+            }
+
+        } catch (err) {
+            console.error(err);
+            alert('Erro ao adicionar produto.');
         }
     });
 
