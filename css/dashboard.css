@@ -107,7 +107,7 @@ header {
     display: flex;
     border: none;
     gap: 4px;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     border-radius: 10px;
     justify-content: center;
@@ -136,6 +136,13 @@ thead th {
     font-size: 14px;
     padding: 7px 15px;
     border-bottom: 1px solid var(--cinza-escuro);
+}
+
+thead th:hover{
+    cursor: pointer;
+    background-color: var(--acqua);
+    color: white;
+    transition: ease 0.1s;
 }
 
 thead th:last-child {
