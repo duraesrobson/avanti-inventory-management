@@ -186,8 +186,7 @@ tr:last-child td {
 }
 
 tbody tr:hover {
-    background-color: var(--laranja);
-    color: white;
+    border-color: var(--laranja);
     transition: ease 0.1s;
 }
 
