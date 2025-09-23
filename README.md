@@ -55,3 +55,33 @@ Sistema de gerenciamento de estoque desenvolvido em **PHP**, **MySQL**, com fron
 │ ├── remove-produto.php
 │ └── update-produto.php
 └── README.md
+
+---
+
+## Instalação 🔧
+
+1. Clone o repositório:
+```bash
+git clone <URL_DO_REPOSITORIO>
+```
+2. Importe o banco de dados database.sql no MYSQL:
+```bash
+CREATE DATABASE estoque_avanti;
+USE estoque_avanti;
+-- Importar tabelas do arquivo database.sql
+```
+3. Configure o arquivo php/config.php com suas credenciais do MYSQL:
+```bash
+$host = 'localhost';
+$db = 'estoque_avanti';
+$user = 'SEU_USUARIO';
+$pass = 'SUA_SENHA';
+```
+4. Execute o projeto no servidor local:
+```bash
+php -S localhost:8000
+```
+5. Acesse no navegador:
+```bash
+http://localhost:8000/index.php
+```
