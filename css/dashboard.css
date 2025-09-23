@@ -137,6 +137,7 @@ header {
     background-color: var(--acqua);
     color: white;
     padding: 8px 16px;
+    cursor: pointer;
 }
 
 table {
