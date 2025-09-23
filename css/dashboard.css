@@ -63,6 +63,11 @@ header {
     text-decoration: none;
 }
 
+.header-sair-btn:hover {
+    background-color: rgb(225, 225, 225);
+    transition: ease 0.1s;
+}
+
 .material-symbols-outlined-logout,
 .material-symbols-outlined-dashboard,
 .material-symbols-outlined-add {
