@@ -80,3 +80,7 @@ Durante o desenvolvimento deste projeto, meu maior aprendizado foi:
 - Gerenciar dados de produtos de forma segura, incluindo inserção, edição e remoção com validação e feedback ao usuário.
 
 O projeto me proporcionou prática com modais dinâmicos, fetch/AJAX, e manipulação do DOM em JavaScript, consolidando conhecimentos em frontend e backend integrados.
+
+---
+
+Projeto desenvolvido por: **Robson Durães**.
