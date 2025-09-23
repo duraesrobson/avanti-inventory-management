@@ -5,10 +5,28 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.querySelector(".error-box").style.display = "flex";
     };
 
-    // retorna no input o usuario que foi no post para mais eficiencia na reescrita, se necessaria
+    // retorna no campo de usuario do index.php o usuario que foi no post para mais eficiencia na reescrita, se necessaria
     if (params.has("usuario")) {
         document.getElementById("input-usuario").value = params.get("usuario");
     };
+
+    // script para busca de produto pelo nome no search-input e mostrar na tabela correspondências
+    const searchInput = document.getElementById("main-topo-search-input");
+    const tableRows = document.querySelectorAll(".main-table tbody tr");
+
+    searchInput.addEventListener("input", () => {
+        const searchValue = searchInput.value.toLowerCase().trim();
+
+        tableRows.forEach(row => {
+            const nomeProduto = row.querySelector("td").innerText.toLowerCase();
+
+            if (nomeProduto.includes(searchValue)) {
+                row.style.display = ""; // se o produto corresponde a pesquisa mostra ele
+            } else {
+                row.style.display = "none"; // esconde caso nao corresponda
+            }
+        });
+    });
 
     const openButtons = document.querySelectorAll('.open-modal');
 
