@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'php/produtos.php';
 include_once __DIR__ . '/auth.php';
 ?>
@@ -42,8 +42,8 @@ include_once __DIR__ . '/auth.php';
                             logout
                         </span>
                         Sair
-                    </button>
-                </a>
+                        </button>
+                    </a>
             </div>
         </div>
     </header>
@@ -285,6 +285,13 @@ include_once __DIR__ . '/auth.php';
 
                 <div class="modal-main" id="remove-modal-main">
                     <!-- script.js vai preencher os dados pegando o id do produto -->
+                </div>
+
+                <div class="remove-modal-main-aviso">
+                    <span class="material-symbols-outlined warning-icon">warning</span>
+                    <p>
+                        Ação permanente!
+                    </p>
                 </div>
 
                 <div class="modal-footer">
