@@ -10,6 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fornecedor = $_POST['fornecedor'] ?? '';
     $descricao = $_POST['descricao'] ?? '';
 
+    // converte virgulas e pontos, permitindo o usuário colocar o preço normalmente
+    $preco = str_replace('.', '', $preco); 
+    $preco = str_replace(',', '.', $preco); 
+
     $stmt = $pdo->prepare("INSERT INTO produtos (nome, sku, categoria, preco, quantidade, fornecedor, descricao) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
     if ($stmt->execute([$nome, $sku, $categoria, $preco, $quantidade, $fornecedor, $descricao])) {
