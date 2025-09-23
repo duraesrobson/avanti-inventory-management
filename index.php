@@ -14,7 +14,7 @@
 <body>
     <main class="main-content">
         <div class="login-box">
-            <form action="/php/auth.php" method="post">
+            <form action="/php/login.php" method="post">
                 <div class="top-form">
                     <div class="top-form-header">
                         <span class="material-symbols-outlined">
