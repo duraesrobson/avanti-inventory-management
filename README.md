@@ -39,33 +39,6 @@ Sistema de gerenciamento de estoque desenvolvido em **PHP**, **MySQL**, com fron
 
 ---
 
-## Estrutura do Projeto
-
-├── css
-│ ├── dashboard.css
-│ ├── global.css
-│ ├── index.css
-│ ├── modal.css
-│ └── responsive.css
-├── dashboard.php
-├── database.sql
-├── index.php
-├── js
-│ └── script.js
-├── php
-│ ├── auth.php
-│ ├── config.php
-│ ├── get-produto.php
-│ ├── insert-produto.php
-│ ├── login.php
-│ ├── logout.php
-│ ├── produtos.php
-│ ├── remove-produto.php
-│ └── update-produto.php
-└── README.md
-
----
-
 ## Instalação 🔧
 
 1. Clone o repositório:
