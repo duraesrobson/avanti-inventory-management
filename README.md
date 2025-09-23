@@ -11,6 +11,14 @@ Sistema de gerenciamento de estoque desenvolvido em **PHP**, **MySQL**, com fron
 
 ---
 
+## Demonstração
+
+<video width="800" controls>
+  <source src="video/estoque-avanti-demo.mp4" type="video/mp4">
+</video>
+
+---
+
 ## Funcionalidades
 
 - Login de usuário com validação de senha.
@@ -85,3 +93,4 @@ php -S localhost:8000
 ```bash
 http://localhost:8000/index.php
 ```
+
